@@ -1,0 +1,125 @@
+/* reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* variabel dasar */
+:root {
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-primary: #6366f1;
+    --color-primary-hover: #4f46e5;
+    --color-text-main: #334155;
+    --color-text-muted: #64748b;
+    --color-border: #e2e8f0;
+    --container-max: 800px;
+    --radius-card: 12px;
+}
+
+/* dasar web */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+/* wadah utama*/
+.container {
+    max-width: min(100% - 2rem, 800px);
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+/* bagian atas */
+.site-header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+.nav-link {
+    color: var(--color-text-main);
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+/* ruang hero */
+#hero {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+#hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* tombol dasar */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* isi */
+#tentang,
+#kegiatan,
+#gabung {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--color-border);
+}
