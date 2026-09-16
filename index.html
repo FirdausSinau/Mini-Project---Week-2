@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analyst Enthusiast Politeknik Negeri Bandung</title>
-    <!-- tautan css -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- panggil javascript -->
     <script src="js/app.js" defer></script>
 </head>
 
@@ -17,11 +15,13 @@
         <div class="container header-content">
             <div class="logo">DA Community</div>
             <div class="nav-actions">
+                <button id="theme-toggle" class="btn-theme" type="button">Mode Gelap</button>
                 <button id="menu-toggle" class="menu-btn" aria-expanded="false" type="button">Menu</button>
             </div>
             <nav id="nav-menu" class="nav-menu">
                 <a class="nav-link" href="#tentang">Tentang</a>
                 <a class="nav-link" href="#kegiatan">Kegiatan</a>
+                <a class="nav-link" href="#faq">FAQ</a>
                 <a class="nav-link" href="#gabung">Gabung</a>
             </nav>
         </div>
@@ -41,7 +41,8 @@
         <section id="tentang">
             <h2>Tentang Kami</h2>
             <p>DA Community adalah komunitas yang didirikan untuk para penggemar analisis data di Politeknik Negeri
-                Bandung.</p>
+                Bandung.
+            </p>
         </section>
 
         <!-- daftar kegiatan -->
@@ -57,30 +58,80 @@
             <div id="kegiatan-container" class="kegiatan-grid"></div>
         </section>
 
-        <!-- formulir pendaftaran awal -->
+        <!-- tanya jawab -->
+        <section id="faq">
+            <h2>Pertanyaan Umum (FAQ)</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-btn" aria-expanded="false" type="button">
+                        <span>Apakah pemula tanpa dasar IT boleh bergabung?</span>
+                        <span class="faq-arrow">+</span>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Tentu saja! Komunitas ini terbuka untuk seluruh mahasiswa dari berbagai jurusan yang memiliki
+                            minat
+                            belajar pengolahan data dari nol.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn" aria-expanded="false" type="button">
+                        <span>Kapan jadwal kumpul rutin diadakan?</span>
+                        <span class="faq-arrow">+</span>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Kami rutin berkumpul setiap hari Jumat sore untuk sesi diskusi ringan atau mengerjakan
+                            project kolaborasi
+                            secara online maupun luring.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- formulir pendaftaran (lengkap) -->
         <section id="gabung">
             <h2>Gabung dengan Kami</h2>
             <p>Silakan isi form pendaftaran di bawah ini.</p>
             <div class="form-container">
-                <form id="form-gabung">
+                <form id="form-gabung" novalidate>
                     <div class="form-group">
-                        <label for="nama">Nama Lengkap</label>
+                        <label for="nama">Nama Lengkap *</label>
                         <input type="text" id="nama" placeholder="Masukkan nama Anda">
+                        <span id="error-nama" class="error-msg"></span>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Mahasiswa</label>
+                        <label for="email">Email Mahasiswa *</label>
                         <input type="email" id="email" placeholder="contoh: nama@student.polban.ac.id">
+                        <span id="error-email" class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="alasan">Motivasi Bergabung *</label>
+                        <textarea id="alasan" rows="3" placeholder="Ceritakan singkat motivasi kamu..."></textarea>
+                        <span id="error-alasan" class="error-msg"></span>
                     </div>
                     <button type="submit" class="button btn-primary">Kirim Pendaftaran</button>
                 </form>
+                <!-- hasil validasi -->
+                <div id="success-box" class="success-box" hidden>
+                    <h3>Pendaftaran Berhasil!</h3>
+                    <p>Berikut adalah ringkasan data kamu:</p>
+                    <ul class="summary-list">
+                        <li><strong>Nama:</strong> <span id="summary-nama"></span></li>
+                        <li><strong>Email:</strong> <span id="summary-email"></span></li>
+                        <li><strong>Motivasi:</strong> <span id="summary-alasan"></span></li>
+                    </ul>
+                    <button id="btn-reset" class="button btn-secondary" type="button">Daftarkan Teman Lain</button>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- catatan kaki -->
+    <!-- footer -->
     <footer>
         <p>&copy; 2026 DA Community Politeknik Negeri Bandung.</p>
     </footer>
+
+    <!-- tombol balik ke atas -->
+    <button id="back-to-top" class="back-to-top" type="button" hidden>Ke Atas</button>
 </body>
 
 </html>
